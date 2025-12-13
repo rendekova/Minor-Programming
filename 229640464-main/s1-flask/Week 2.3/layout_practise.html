@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="layout-container">
+        <div class="box box-1">Box 1 (Static)</div>
+        <div class="box box-2 relative-box">Box 2 (Relative)</div>
+        <div class="box box-3 absolute-box">Box 3 (Absolute)</div>
+        <div class="box box-4 sticky-box">Box 4 (Sticky)</div>
+    </div> <div class="fixed-box">Fixed Footer (Fixed)</div>
+
+    <div style="height: 1000px; background-color: #f0f0f0; padding: 20px;">
+        Scroll down to see the fixed and sticky boxes in action!
+    </div>
+
+    <div class="entities-area">
+        <h3>HTML Entities Demonstration</h3>
+        <p>The ampersand: **&amp;** = It displays the **&** character.</p>
+        <p>The double quote: **&quot;** = It displays the **"** character.</p>
+        <p>The less-than sign: **&lt;** = It displays the **<** character. Essential for showing code.</p>
+        <p>The greater-than sign: **&gt;** = It displays the **>** character.</p>
+        <p>Non-breaking space: **&nbsp;** = It inserts a space that will not break into a new line.</p>
+        <p>Euro Sign: **&euro;** = It displays the Euro symbol (€).</p>
+        <p>Copyright Sign: **&copy;** = It displays the Copyright symbol (©).</p>
+        <p>Trademark Sign: **&trade;** = It displays the Trademark symbol (™).</p>
+    </div>
+
+    <section class="css-descriptions">
+    <h3>CSS Property Descriptions (Experimentation Results)</h3>
+
+    <h4>Box Model Properties</h4>
+    <ul>
+        <li>**`padding`:** Space **inside** the box (between the content and the border). *Observation:* When changed to `40px`, the background area of the box grew significantly, increasing the space around the text, but the text size itself did not change.
+
+[Image of the CSS Box Model]
+
+</li>
+        <li>**`margin`:** Space **outside** the box (between the border and other elements). *Observation:* When changed to `30px`, the distance separating the boxes from each other and from the container edge increased dramatically.</li>
+        <li>**`height`:** Sets the explicit vertical dimension of the content area. *Observation:* When set to `50px`, the content space inside the box shrank, making the boxes appear shorter overall.</li>
+        <li>**`border`:** The line around the content and padding. *Observation:* Used `2px solid black` to clearly define the box boundary.</li>
+    </ul>
+
+    <hr>
+
+    <h4>Positioning Properties</h4>
+    <ul>
+        <li>**`position: static;` (Box 1):** This is the **default**. The element follows the normal document flow and ignores `top/left/right/bottom` offsets.</li>
+        <li>**`position: relative;` (Box 2):** Positioned relative to its normal place. It moves but **still occupies its original space** in the document flow.</li>
+        <li>**`position: absolute;` (Box 3):** The element is **removed from the document flow**. It is positioned relative to its nearest *positioned* ancestor.</li>
+        <li>**`position: sticky;` (Box 4):** Acts like `relative` when scrolling until it hits the defined threshold (`top: 0`), then it "sticks" and behaves like `fixed`.</li>
+        <li>**`position: fixed;` (Fixed Footer):** The element is positioned relative to the **viewport** (browser window) and remains in the same spot even when the user scrolls the page.</li>
+    </ul>
+
+    </section>
+
+</body>
+</html>
+

@@ -1,0 +1,5 @@
+Question 1: If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+Answer 1: The audio aura would be characterized based on the average energy, danceability and valence of listener's top songs. Average energy is calculated as 0.65906, the average dancebility is 0.71646 and the average valence is 0.484443. Based on this information, I would describe the audio aura as energetic and upbeat, but not overly cheerful. It gives calm, happy, excited and moody vibe.
+
+Question 2: Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+Answer 2: Using the calculation of averages might not accurately describe every specific listener and their feeling towards a song. Every single listener has a different approach to a song, so to apply a better approach could involve grouping songs into a mood category, weightining the play count, and incorporating lyrics sentiment analysis to better capture the listener's emotional and musical preferences.

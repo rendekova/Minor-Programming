@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Board Assignment</title>
+
+    <style>
+        /* --- 1. The General Setup and Absolute Centering --- */
+
+        body {
+            /* Background colour requirement */
+            background-color: #f8f0e5; 
+            margin: 0;
+            padding: 20px 10px; 
+            
+            /* CRITICAL: Centering the board and title vertically and horizontally */
+            display: grid; 
+            place-content: center; /* Simplest way to center vertically and horizontally */
+            min-height: 100vh; /* Important for vertical centering */
+            
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: auto; 
+        }
+
+        /* --- 2. Title Styling --- */
+        
+        #title-container {
+            /* Ensures title is included in the centering and keeps margin */
+            margin: 0 auto 25px auto; 
+            /* Prevents the title from being unnecessarily wide */
+            max-width: 80vmin; 
+        }
+
+        h1 {
+            color: #4a4e69; 
+            margin: 0 0 5px 0; 
+        }
+        
+        p {
+            color: #6b7a9b;
+            margin: 0;
+        }
+
+        /* --- 3. Grid Container Styling (The Board) --- */
+
+        #game-board {
+            display: grid;
+            
+            /* CRITICAL: Enforces 5 columns and the 20px-200px min/max field size. */
+            grid-template-columns: repeat(5, minmax(20px, 1fr)); 
+            /* CRITICAL: Enforces 3 rows, matching column sizing for the square requirement. */
+            grid-template-rows: repeat(3, minmax(20px, 1fr)); 
+            
+            /* Fixed 10px gutters */
+            gap: 10px;
+            
+            /* This defines the maximum size of the board relative to the window */
+            max-width: 80vmin;
+            
+            /* Setting the absolute maximum board size */
+            max-width: 1000px; 
+            max-height: 600px; 
+
+            background-color: #6b7a9b30; 
+            padding: 10px;
+            border-radius: 12px;
+            width: 100%; /* Ensures it uses the full max-width/80vmin */
+        }
+
+        /* --- 4. Field (Square) Styling and Sizing --- */
+        
+        .field {
+            background-color: #8b9dc3;
+            border-radius: 6px; 
+            transition: background-color 0.2s ease, transform 0.2s ease; 
+            border: 2px solid #6b7a9b;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            
+            /* CRITICAL: The most precise way to enforce the square shape (aspect-ratio: 1/1) */
+            aspect-ratio: 1 / 1; 
+            height: auto; 
+            padding: 0; 
+            
+            cursor: default; 
+        }
+
+
+        /* --- 5. Specific Field Styling (Two center fields: 7th and 9th in the 15-field grid) --- */
+        
+        /* The two center fields in a 3x5 (15 fields) grid are the 7th and 9th */
+        .field:nth-child(7), 
+        .field:nth-child(9) {
+            background-color: #4a4e69; 
+        }
+        
+        /* --- 6. Cursor and Hover Behavior --- */
+        
+        .field:hover {
+            cursor: pointer; 
+            transform: scale(1.02); /* More subtle hover effect */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* --- 7. Clicked States --- */
+
+        .light-clicked {
+            background-color: #4c9e6c !important; 
+        }
+
+        .dark-clicked {
+            background-color: #e63946 !important; 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="title-container">
+        <h1>My Responsive Game Board</h1>
+        <p>By Martina</p>
+    </div>
+
+    <div id="game-board">
+        
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        
+        <div class="field"></div> <div class="field"></div> <div class="field"></div> <div class="field"></div> <div class="field"></div> <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        
+    </div>
+
+    <script>
+        // JavaScript for click functionality
+
+        const fields = document.querySelectorAll('.field');
+
+        fields.forEach(field => {
+            
+            field.addEventListener('click', () => {
+
+                // Use field.matches() to check if the element is the 7th or 9th child (dark field)
+                const isDarkField = field.matches(':nth-child(7), :nth-child(9)');
+
+                if (isDarkField) {
+                    field.classList.toggle('dark-clicked');
+                    field.classList.remove('light-clicked');
+                } 
+                // Light field
+                else {
+                    field.classList.toggle('light-clicked');
+                    field.classList.remove('dark-clicked');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

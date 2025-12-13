@@ -1,0 +1,221 @@
+/* --- Global Styles for better appearance --- */
+body {
+    /* PERSONALIZATION: Updated font stack for modern look */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #fcfcfc;
+}
+
+/* --- Assignment 4: Layout Practice Styles --- */
+
+/* Container must be set to display: grid or display: flex (Experimentation Area) */
+.layout-container {
+    /* --- ACTIVE: CSS GRID for Assignment 4 Layout --- */
+    display: grid;
+    /* Set to relative so Box 3 (absolute) is positioned within it */
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+    border: 1px dashed #ccc;
+    min-height: 250px;
+}
+
+/* --- FLEXBOX ALTERNATIVE (Uncomment this and comment out the GRID above to test) ---
+/*
+.layout-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+    border: 1px dashed #ccc;
+    min-height: 250px;
+}
+*/
+
+.box {
+    padding: 40px;
+    margin: 30px; /* Tested: Experiment with margin */
+    height: 50px; /* Tested: Experiment with height */
+    border: 2px solid black;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+
+/* Box 1 uses the default: position: static; */
+
+/* Experiment with Position on specific boxes */
+.relative-box {
+    background-color: coral;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+/* Demonstrates absolute positioning */
+.absolute-box {
+    background-color: purple;
+    color: white;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 5;
+}
+
+/* Demonstrates sticky positioning */
+.sticky-box {
+    background-color: gold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Demonstrates fixed positioning (Outside the layout-container) */
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+/* Styles for the descriptions on the layout_practise.html page */
+.entities-area, .css-descriptions {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* --- Assignment 5: Portfolio Design Styles --- */
+
+/* Style the Header/Menu */
+header {
+    /* PERSONALIZATION: Deep Teal background */
+    background-color: #00796b;
+    padding: 15px 0;
+    color: white;
+}
+
+/* APPLIED: Target the navigation structure in index.html */
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-menu h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.main-menu a {
+    /* PERSONALIZATION: Soft Cyan link color */
+    color: #b2dfdb;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.main-menu a:hover {
+    /* PERSONALIZATION: Darker Teal on hover */
+    background-color: #004d40;
+    border-radius: 4px;
+}
+
+/* Style the Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    width: 90%;
+}
+
+.project-block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.project-block img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.project-block a {
+    /* PERSONALIZATION: Link color matches Deep Teal */
+    color: #00796b;
+    font-weight: bold;
+    text-decoration: none;
+}
+.project-block a:hover {
+    text-decoration: underline;
+}
+
+/* Style the Footer */
+footer {
+    background-color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    /* PERSONALIZATION: Border color matches dark teal */
+    border-top: 3px solid #004d40;
+}
+
+/* --- Action Points Styling (Cache) --- */
+.action-points-cache {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+.action-points-list {
+    list-style: none;
+    padding: 0;
+}
+.point {
+    padding: 10px 15px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+.point.completed {
+    background-color: #e6f7ea;
+    border-left: 5px solid #38a169;
+    color: #38a169;
+}
+.point.completed::before { content: "✅"; margin-right: 10px; }
+
+.point.in-progress {
+    background-color: #fff9e6;
+    border-left: 5px solid #d69e2e;
+    color: #d69e2e;
+}
+.point.in-progress::before { content: "⏳"; margin-right: 10px; }
+
+.point.pending {
+    background-color: #f0f4f8;
+    border-left: 5px solid #4a5568;
+    color: #4a5568;
+}
+.point.pending::before { content: "📝"; margin-right: 10px; }
+
+
+
+

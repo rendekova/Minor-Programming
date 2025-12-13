@@ -1,0 +1,146 @@
+/* Global settings for the LIGHT Theme */
+body {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #ffffff; /* BIELE pozadie celej stránky */
+    color: #333333; /* Tmavý text (čitateľný) */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styling - Tmavý text na svetlom pozadí */
+header {
+    background-color: #f0f0f0; /* Veľmi svetlé pozadie pre hlavičku */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ccc; /* Jemná šedá linka */
+}
+
+h1 {
+    color: #333333; /* Tmavý text (čitateľný) */
+    font-weight: 300;
+}
+
+/* Common Section Styling */
+section {
+    padding: 30px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center; /* Centrovanie textu a nadpisov */
+}
+
+h2, h3, h4 {
+    color: #569cd6; /* Modrá farba pre nadpisy (ako akcent) */
+    border-bottom: 1px dashed #cccccc; /* Svetlá čiara pod nadpisom */
+    padding-bottom: 5px;
+}
+
+/* About Me Section (Photo + Text) */
+.content-about-me {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: left; /* Text vo vnútri Flexboxu zarovnaný doľava */
+}
+
+/* Profile Picture Styling */
+.picture img {
+    border-radius: 50%;
+    border: 3px solid #608b4e; /* Zelený rám (môže ostať) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Jemný tieň */
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+.picture img:hover {
+    transform: scale(1.05);
+}
+
+/* Project Item Styling */
+.projekt-item {
+    background-color: #ffffff; /* BIELE POZADIE (čitateľné) */
+    padding: 20px;
+    border-left: 5px solid #dcdcaa; /* Žltý akcent */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Jemný tieň */
+}
+
+/* Pico Content Layout (Text + Image) */
+.pico-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pico-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.pico-image img {
+    border: 2px solid #a6a6a6;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Skills text highlight */
+.skilly {
+    color: #4ec9b0; /* Zelený akcent */
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Link (Anchor tag) Styling */
+a {
+    color: #007acc; /* Modré linky na svetlom pozadí */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00569a;
+}
+
+/* Contact Details Styling */
+.contact-details {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff; /* BIELE POZADIE (čitateľné) */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: #f0f0f0; /* Svetlé pozadie */
+    color: #808080; /* Tmavšia šedá */
+    font-size: 0.9em;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    /* Stack elements in the About Me section */
+    .content-about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+    .picture {
+        margin-bottom: 20px;
+    }
+    /* Stack elements in the Pico section */
+    .pico-content {
+        flex-direction: column;
+    }
+}
+ 
