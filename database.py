@@ -22,3 +22,14 @@ class Database:
         with self.get_connection() as conn:
             # Executes an INSERT query to add a new number plate to the "numberplates" table
             conn.execute("INSERT INTO numberplates (plate) VALUES (?)", (plate,))
+
+    def init_db(self):
+        # Creates the table if it does not already exist
+        with self.get_connection() as conn:
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS numberplates (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    plate TEXT NOT NULL
+                )
+            """)
+            conn.commit()
