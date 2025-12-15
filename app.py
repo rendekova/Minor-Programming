@@ -61,5 +61,4 @@ def main():
     # Render the 'index.html' template with the list of plates
     return render_template('index.html', plates=plates)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
